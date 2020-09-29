@@ -31,6 +31,7 @@ class N_max_strategy(BaseStrategy):
                 max_money = self.envelopes[index].money
                 count += 1
                 self.envelopes[index].used = True
+            index += 1
         return self.envelopes[index]
 
 
