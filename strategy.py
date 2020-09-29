@@ -26,13 +26,16 @@ class N_max_strategy(BaseStrategy):
         max_money = 0
         count = 0
         index = 0
-        while index < 100 and count <= self.N:
+        while index < 100 and count < self.N:
             if self.envelopes[index].money > max_money and not self.envelopes[index].used:
                 max_money = self.envelopes[index].money
                 count += 1
                 self.envelopes[index].used = True
             index += 1
-        return max_money
+        print("you got: " + str(max_money) + " dollars")
+
+    def display(self):
+        return "N max strategy"
 
 
 class More_then_N_percent_group_strategy(BaseStrategy):
