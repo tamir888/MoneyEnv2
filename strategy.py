@@ -21,7 +21,8 @@ class N_max_strategy(BaseStrategy):
     def play(self):
         """
         play the game: open the envelopes until we find N envelopes with max money and then stop
-        :return max amount of money:
+        and print the amount of money
+        :return none:
         """
         max_money = 0
         count = 0
@@ -35,8 +36,12 @@ class N_max_strategy(BaseStrategy):
         print("you got: " + str(max_money) + " dollars")
 
     def display(self):
-        return "N max strategy"
-
+        """
+        display what this strategy is doing
+        :return description:
+        """
+        return "N max strategy - find N max envelopes, and when it found N maxes it stops \n " \
+               "and print how much money was in the last envelope and that's how much you've got."
 
 class More_then_N_percent_group_strategy(BaseStrategy):
     def __init__(self, envelopes, percent):
