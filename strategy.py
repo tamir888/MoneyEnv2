@@ -5,6 +5,24 @@ import random
 class BaseStrategy:
     def __init__(self, envelopes):
         self.envelopes = envelopes
+    def play(self):
+        max_money = 0
+        for place in self.envelopes:
+            stop_or_open = input("inside this envelope there is"+self.envelopes[place].money + "$. \n do you want to open another envelope or stop? (write open/stop to continue." )
+            while stop_or_open not in ("stop", "open"):
+                stop_or_open = input("type open or stop")
+            if stop_or_open == "stop":
+                max_money = self.envelopes[place].money
+                print("you got: " + str(max_money) + " dollars")
+                return
+            if stop_or_open == "open":
+                print("next envelope is opening now")
+
+        print("you got: " + str(max_money) + " dollars")
+    
+    def display(self):
+        return "take an envelope from the list, print the amount of money and ask if you want to take it. \n " \
+               "it will continue taking envelopes until you choose to take it, or until there are no more envelopes."
 
 
 class Automatic_BaseStrategy(BaseStrategy):
