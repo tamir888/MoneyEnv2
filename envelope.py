@@ -6,3 +6,5 @@ class Envelope:
         self.money = int(random.randint(0, 10000000000))
         self.used = False
 
+    def display(self):
+        return str(self.money) + "dollars"
