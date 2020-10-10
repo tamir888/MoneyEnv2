@@ -99,6 +99,10 @@ class More_then_N_percent_group_strategy(BaseStrategy):
         print(env_to_return.displey())
 
     def display(self):
+        """
+        display what this strategy is doing
+        :return description:
+        """
         return (" opens x% of envelopes and chooses the envelope \n "
                 "with the highest amount of money inside. then it \n "
                 "compares the amount of money to the other 100% - x% \n "
